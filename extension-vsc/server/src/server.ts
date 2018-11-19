@@ -38,8 +38,8 @@ connection.onInitialize((params: InitializeParams) => {
 	hasWorkspaceFolderCapability = !!(capabilities.workspace && !!capabilities.workspace.workspaceFolders);
 	hasDiagnosticRelatedInformationCapability =
 		!!(capabilities.textDocument &&
-		capabilities.textDocument.publishDiagnostics &&
-		capabilities.textDocument.publishDiagnostics.relatedInformation);
+			capabilities.textDocument.publishDiagnostics &&
+			capabilities.textDocument.publishDiagnostics.relatedInformation);
 
 	return {
 		capabilities: {
@@ -181,15 +181,130 @@ connection.onCompletion(
 		// info and always provide the same completion items.
 		return [
 			{
-				label: 'TypeScript',
+				label: 'pc',
 				kind: CompletionItemKind.Text,
 				data: 1
 			},
 			{
-				label: 'JavaScript',
+				label: 'Application',
 				kind: CompletionItemKind.Text,
 				data: 2
-			}
+			},
+			{
+				label: 'Entity',
+				kind: CompletionItemKind.Text,
+				data: 3
+			},
+			{
+				label: 'start',
+				kind: CompletionItemKind.Text,
+				data: 4
+			},
+			{
+				label: 'app',
+				kind: CompletionItemKind.Text,
+				data: 5
+			},
+			{
+				label: 'setCanvasFillMode',
+				kind: CompletionItemKind.Text,
+				data: 6
+			},
+			{
+				label: 'setCanvasResolution',
+				kind: CompletionItemKind.Text,
+				data: 7
+			},
+			{
+				label: 'FILLMODE_FILL_WINDOW',
+				kind: CompletionItemKind.Text,
+				data: 8
+			},
+			{
+				label: 'RESOLUTION_AUTO',
+				kind: CompletionItemKind.Text,
+				data: 9
+			},
+			{
+				label: 'resizeCanvas',
+				kind: CompletionItemKind.Text,
+				data: 10
+			},
+			{
+				label: 'addComponent',
+				kind: CompletionItemKind.Text,
+				data: 11
+			},
+			{
+				label: 'cube',
+				kind: CompletionItemKind.Text,
+				data: 12
+			},
+			{
+				label: 'camera',
+				kind: CompletionItemKind.Text,
+				data: 13
+			},
+			{
+				label: 'light',
+				kind: CompletionItemKind.Text,
+				data: 14
+			},
+			{
+				label: 'model',
+				kind: CompletionItemKind.Text,
+				data: 15
+			},
+			{
+				label: 'box',
+				kind: CompletionItemKind.Text,
+				data: 16
+			},
+			{
+				label: 'Color',
+				kind: CompletionItemKind.Text,
+				data: 17
+			},
+			{
+				label: 'root',
+				kind: CompletionItemKind.Text,
+				data: 18
+			},
+			{
+				label: 'addChild',
+				kind: CompletionItemKind.Text,
+				data: 19
+			},
+			{
+				label: 'setPosition',
+				kind: CompletionItemKind.Text,
+				data: 20
+			},
+			{
+				label: 'setEulerAngles',
+				kind: CompletionItemKind.Text,
+				data: 21
+			},
+			{
+				label: 'on',
+				kind: CompletionItemKind.Text,
+				data: 22
+			},
+			{
+				label: 'update',
+				kind: CompletionItemKind.Text,
+				data: 23
+			},
+			{
+				label: 'deltaTime',
+				kind: CompletionItemKind.Text,
+				data: 24
+			},
+			{
+				label: 'rotate',
+				kind: CompletionItemKind.Text,
+				data: 25
+			},
 		];
 	}
 );
@@ -198,36 +313,114 @@ connection.onCompletion(
 // the completion list.
 connection.onCompletionResolve(
 	(item: CompletionItem): CompletionItem => {
-		if (item.data === 1) {
-			(item.detail = 'TypeScript details'),
-				(item.documentation = 'TypeScript documentation');
-		} else if (item.data === 2) {
-			(item.detail = 'JavaScript details'),
-				(item.documentation = 'JavaScript documentation');
+		switch (item.data) {
+			case 1:
+				(item.detail = 'new pc'),
+					(item.documentation = 'Root namespace for the PlayCanvas Engine');
+				break;
+			case 2:
+				(item.detail = 'new pc.Application(canvas, options)'),
+					(item.documentation = 'Create application');
+				break;
+			case 3:
+				(item.detail = 'new pc.Entity()'),
+					(item.documentation = 'Core primitive of a PlayCanvas game');
+				break;
+			case 4:
+				(item.detail = 'app.start()'),
+					(item.documentation = 'Start game loop');
+				break;
+			case 5:
+				(item.detail = 'app'),
+					(item.documentation = 'Get the pc.Application');
+				break;
+			case 6:
+				(item.detail = 'setCanvasFillMode(mode, [width], [height])'),
+					(item.documentation = 'Controls how the canvas fills the window and resizes when the window changes');
+				break;
+			case 7:
+				(item.detail = 'setCanvasResolution(mode, [width], [height])'),
+					(item.documentation = 'Change the resolution of the canvas, and set the way it behaves when the window is resized');
+				break;
+			case 8:
+				(item.detail = 'pc.FILLMODE_FILL_WINDOW'),
+					(item.documentation = 'the canvas will simply fill the window, changing aspect ratio');
+				break;
+			case 9:
+				(item.detail = 'pc.RESOLUTION_AUTO'),
+					(item.documentation = 'if width and height are not provided, canvas will be resized to match canvas client size');
+				break;
+			case 10:
+				(item.detail = 'resizeCanvas([width], [height])'),
+					(item.documentation = 'Resize the canvas');
+				break;
+			case 11:
+				(item.detail = 'addComponent(type, data)'),
+					(item.documentation = 'Create a new component and add it to the entity');
+				break;
+			case 12:
+				(item.detail = 'cube component'),
+					(item.documentation = 'Component to the Entity');
+				break;
+			case 13:
+				(item.detail = 'camera component'),
+					(item.documentation = 'Component to the Entity');
+				break;
+			case 14:
+				(item.detail = 'light component'),
+					(item.documentation = 'Component to the Entity');
+				break;
+			case 15:
+				(item.detail = 'model component'),
+					(item.documentation = 'Component to the Entity');
+				break;
+			case 16:
+				(item.detail = 'box type'),
+					(item.documentation = 'Component Type to the Entity');
+				break;
+			case 17:
+				(item.detail = 'pc.Color'),
+					(item.documentation = 'Representation of an RGBA color');
+				break;
+			case 18:
+				(item.detail = 'pc.Entity root'),
+					(item.documentation = 'The root pc.Entity of the application');
+				break;
+			case 19:
+				(item.detail = 'addChild(node)'),
+					(item.documentation = 'Add a new child to the child list and update the parent value of the child node');
+				break;
+			case 20:
+				(item.detail = 'setPosition(x, [y], [z])'),
+					(item.documentation = 'Sets the world-space position of the specified graph node');
+				break;
+			case 21:
+				(item.detail = 'setEulerAngles(x, [y], [z])'),
+					(item.documentation = 'Sets the world-space rotation of the specified graph node using euler angles');
+				break;
+			case 22:
+				(item.detail = 'app.on(action, callback)'),
+					(item.documentation = 'Event');
+				break;
+			case 23:
+				(item.detail = 'update'),
+					(item.documentation = 'Update Event');
+				break;
+			case 24:
+				(item.detail = 'deltaTime'),
+					(item.documentation = 'Time Type');
+				break;
+			case 25:
+				(item.detail = 'rotate(x, [y], [z])'),
+					(item.documentation = 'Rotates the graph node in world-space by the specified Euler angles');
+				break;
+			default:
+				(item.detail = 'Play Canvas details'),
+					(item.documentation = 'No documentation');
 		}
 		return item;
 	}
 );
-
-/*
-connection.onDidOpenTextDocument((params) => {
-	// A text document got opened in VSCode.
-	// params.uri uniquely identifies the document. For documents store on disk this is a file URI.
-	// params.text the initial full content of the document.
-	connection.console.log(`${params.textDocument.uri} opened.`);
-});
-connection.onDidChangeTextDocument((params) => {
-	// The content of a text document did change in VSCode.
-	// params.uri uniquely identifies the document.
-	// params.contentChanges describe the content changes to the document.
-	connection.console.log(`${params.textDocument.uri} changed: ${JSON.stringify(params.contentChanges)}`);
-});
-connection.onDidCloseTextDocument((params) => {
-	// A text document got closed in VSCode.
-	// params.uri uniquely identifies the document.
-	connection.console.log(`${params.textDocument.uri} closed.`);
-});
-*/
 
 // Make the text document manager listen on the connection
 // for open, change and close text document events
