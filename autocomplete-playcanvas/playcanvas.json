@@ -1,0 +1,76 @@
+{"pc": {
+	"description":"Root namespace for the PlayCanvas Engine"
+},
+"Application": {
+	"description":" Create application : pc.Application(canvas, options)"
+},
+"pc.Application": {
+	"description":"create application"
+},
+"Entity": {
+	"description":"Core primitive of a PlayCanvas game"
+},
+"app": {
+	"description":"Start game loop"
+},
+"setCanvasFillMode": {
+	"description":"Controls how the canvas fills the window and resizes when the window changes : setCanvasFillMode(mode, [width], [height])"
+},
+"setCanvasFillMode": {
+	"description":"Controls how the canvas fills the window and resizes when the window changes : setCanvasFillMode(mode, [width], [height])"
+},
+"setCanvasResolution": {
+	"description":"Change the resolution of the canvas, and set the way it behaves when the window is resized : setCanvasResolution(mode, [width], [height])"
+},
+"FILLMODE_FILL_WINDOW": {
+	"description":"the canvas will simply fill the window, changing aspect ratio"
+},
+"RESOLUTION_AUTO": {
+	"description":"if width and height are not provided, canvas will be resized to match canvas client size"
+},
+"resizeCanvas": {
+	"description":"Resize the canvas : resizeCanvas([width], [height])"
+},
+"addComponent": {
+	"description":"Create a new component and add it to the entity : addComponent(type, data)"
+},
+"cube component": {
+	"description":"Component to the Entity"
+},
+"camera component": {
+	"description":"Component to the Entity"
+},
+"light component": {
+	"description":"Component to the Entity"
+},
+"model component": {
+	"description":"Component to the Entity"
+},
+"box type": {
+	"description":"Component Type to the Entity"
+},
+"pc.Color": {
+	"description":"Representation of an RGBA color"
+},
+"pc.Entity root": {
+	"description":"The root pc.Entity of the application"
+},
+"addChild": {
+	"description":"Add a new child to the child list and update the parent value of the child node : addChild(node)"
+},
+"setPosition": {
+	"description":"Sets the world-space position of the specified graph node : setPosition(x, [y], [z])"
+},
+"setEulerAngles": {
+	"description":"Representation of an RGBA color"
+},
+"app.on": {
+	"description":"Event"
+},
+"deltaTime": {
+	"description":"Time Type"
+},
+"rotate": {
+	"description":"Rotates the graph node in world-space by the specified Euler angles : rotate(x, [y], [z])"
+}
+}

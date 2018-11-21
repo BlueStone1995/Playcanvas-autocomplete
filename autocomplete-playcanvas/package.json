@@ -1,0 +1,60 @@
+{
+  "_from": "https://www.atom.io/api/packages/autocomplete-playcanvas/versions/0.4.0/tarball",
+  "_id": "autocomplete-playcanvas@0.4.0",
+  "_inBundle": false,
+  "_integrity": "sha512-akDtlBRFtiN+YWGDy+eJVOz5jIsL25V3wXsNUp8MKk/YU71m9lzQFsy0ozIT8NHVPz0j9Y7UvSdBinqmC53Mew==",
+  "_location": "/autocomplete-playcanvas",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/autocomplete-playcanvas/versions/0.4.0/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/autocomplete-playcanvas/versions/0.4.0/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/autocomplete-playcanvas/versions/0.4.0/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/autocomplete-playcanvas/versions/0.4.0/tarball"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://www.atom.io/api/packages/autocomplete-playcanvas/versions/0.4.0/tarball",
+  "_shasum": "28d50f36bf7f3690f6b1eee6ada68073d9bc586e",
+  "_spec": "https://www.atom.io/api/packages/autocomplete-playcanvas/versions/0.4.0/tarball",
+  "_where": "C:\\Users\\zhaow\\AppData\\Local\\Temp\\apm-install-dir-1181017-6096-1by9tmx.bnkl",
+  "author": {
+    "name": "HONG Yue",
+    "email": "hongyue192447@gmail.com"
+  },
+
+  "bundleDependencies": false,
+  "configSchema": {
+    "FileType": {
+      "type": "string",
+      "default": ".source.coffee",
+      "description": "List of scopes for typing which will be given the word completion."
+    }
+  },
+  "dependencies": {
+    "fuzzaldrin": "^2.1.0"
+  },
+  "deprecated": false,
+  "description": "Playcanvas API autocompetion with the hint of usage.",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "keywords": [
+    "autocomplete",
+    "playcanvas API",
+    "fuzzy"
+  ],
+  "license": "MIT",
+  "main": "./lib/autocompletePlaycanvas",
+  "name": "autocomplete-playcanvas",
+  "providedServices": {
+    "autocomplete.provider": {
+      "versions": {
+        "2.0.0": "getProvider"
+      }
+    }
+  },
+  "version": "0.4.0"
+}
